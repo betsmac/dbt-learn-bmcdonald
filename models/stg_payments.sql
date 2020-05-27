@@ -4,4 +4,4 @@ select id as payment_id
     , amount/100::decimal(16,5) as payment_amount
     , created
     , _batched_at
-from raw.stripe.payment
+from {{source('stripe','payment')}}
